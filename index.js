@@ -25,11 +25,18 @@ function Phrase(content) {
      }
      // Returs lower case
      this.processedContent = function processedContent() {
-          return this.processor(this.content);
+          //return this.processor(this.content);
+          //return this.content;
+          return this.letters().toLowerCase();
      }
 
      this.louder = function () {
           return this.content.toUpperCase();
+     }
+
+     this.letters = function letters(){
+          //return Array.from(this.content).filter(c => c.match(/[a-z]/gi)).join("");
+          return (this.content.match(/[a-z]/gi) || []).join("");
      }
 
      this.palindrome = function palindrome() {
